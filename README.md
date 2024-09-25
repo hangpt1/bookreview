@@ -4,8 +4,11 @@ Danh sách những trang cần code:
 - writerv.php: trang để tạo bài viết rv; bookdetailrv.php: chi tiết cuốn sách (Ánh) 29/9
 - adrv.php: Quản lý bài viết của người dùng; adcmt.php: QUẢN LÝ CMT; adwrite.php: quản lý bài viết ad (Dương)26/9
 - Csdl Huyền:26/9
-  + user
-  + sách
-  + Cmt(có số sao)
-  + Bài viết (có số sao)
-  + Thể loại
+  + users ( UserID, Email, Username, Password, Avatar)
+  + books ( BookID, Bookname, Author, Published_year, Description, Image, Create_at( ngay tao) )
+  + comment (CommentID, UserID, BookID, Comment)
+  + topics (TopicID, Topicname)
+  + topicbook (TopicID, BookID)
+  + book_rating (UserID, BookID, rate)
+  + comment_rating ( CommentID, UserID, rate)
+  + admin (name, password)
