@@ -63,9 +63,8 @@
             <td>nội dung sách</td>
             <td>5</td>
             <td>05/01/2024</td>
-
             <td>Chưa duyệt</td>
-            <td><button>Xóa</button></td>
+            <td><button>Duyệt</button> <button>Xóa</button></td>
             
         </tr>
         <!-- Các dòng khác -->
