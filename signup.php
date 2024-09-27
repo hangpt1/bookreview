@@ -13,18 +13,18 @@
     <div class="container">
             <center>
             <div class="form-container">
-                <form id="loginForm" class="form" action="?action=login" method="POST"  >
+                <form id="signupForm" class="form" action="?action=signup" method="POST"  >
                     <h2 class="form-title">Đăng ký</h2><br>
 
-                    <label for="loginEmail">Email <span style="color:red;">*</span></label>
-                    <input type="email" id="loginEmail" name="loginEmail" placeholder="Email" ><br><br>
+                    <label for="signupEmail">Email <span style="color:red;">*</span></label>
+                    <input type="email" id="signupEmail" name="signupEmail" placeholder="Email" ><br><br>
                     <!-- <small>Error message</small> -->
                      
-                    <label for="loginName">Name <span style="color:red;">*</span></label>
-                    <input type="text" id="loginName" name="loginName" placeholder="Name" ><br><br>
+                    <label for="signupName">Name <span style="color:red;">*</span></label>
+                    <input type="text" id="signupName" name="signupName" placeholder="Name" ><br><br>
                     <!-- <small>Error message</small> -->
-                    <label for="loginPassword">Mật khẩu <span style="color:red;">*</span></label>
-                    <input type="password" id="loginPassword" name="loginPassword" placeholder="Password" ><br><br>
+                    <label for="signupPassword">Mật khẩu <span style="color:red;">*</span></label>
+                    <input type="password" id="signupPassword" name="signupPassword" placeholder="Password" ><br><br>
                     <!-- <small>Error message</small> -->
                     <button type="submit" class="button-form">Đăng nhập</button>
                     <div class="form-control">
