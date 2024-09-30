@@ -1,0 +1,43 @@
+$('body').click(function(){$(".autocomplete-suggestions").hide();});$(".autocomplete-suggestions").css('display','none');var timeout;var timeoutShare;function clickSearchMore(){$('.more-search').click(function(){$key=$("#search-name").val();window.location.replace("/search?query="+$key);})}
+$('.search-input,.header__search-field').bind('keyup',function(event){var keyword=$(this).val().trim();const inputElement=$(this);if(keyword){var keyCode=event.keyCode||event.which;var params={k:keyword,pageSize:5};if(typeof keyCode===undefined||keyCode!=8&&(keyCode<=46||keyCode>=112)){return false;}
+$(".autocomplete-suggestions").html('');if(timeout){clearTimeout(timeout);}
+timeout=setTimeout(function(){$(".autocomplete-suggestions").css('display','none');$.ajax({url:'/service/company/find',type:'post',dataType:'json',contentType:'application/json',success:function(data){if(data.status=="successful"){if(data.data.length>0){inputElement.parent().find(".autocomplete-suggestions").css('display','block');}
+data.data.forEach((company,index)=>{$(".autocomplete-suggestions").append(`
+                                       <a href="/review-book/${company.slug}" class="autocomplete-suggestion" data-index="${index}">
+                                            <div class="businessunit-suggestion" title="${company.companyname}">
+                                                <div class="businessunit-suggestion__display-name">
+                                                 <img class="img-search" src="${company.logo?'/uploads/logo/'+company.logo:''}">${company.companyname}
+                                                </div>
+                                            </div>
+                                            <img class="autocomplete-selected__arrow" src="//images-static.tp-staging.com/community/shared/arrow-right.svg">
+                                        </a>
+
+                                    `);});if(data.pagesCount>1){$(".autocomplete-suggestions").append(`
+                                    <div class="autocomplete-suggestion more-search" data-index="7">
+                                        <div class="showall-suggestion">
+                                            <span>Show all results</span>
+                                            <img class="showall-suggestion__arrow" src="//images-static.tp-staging.com/community/shared/arrow-right-white.svg">
+                                        </div>
+                                    </div>
+                                `);clickSearchMore();}}},data:JSON.stringify(params),});},500);}else{$(".autocomplete-suggestions").html('');}});const resetClass=$(".star-selector__buttons").attr("class");$(".star-selector__buttons__button").on('click',function(){const num=$(this).attr('data-stars');if(num=="1"){$(".star-selector__buttons").attr("class","star-selector__buttons star-selector__buttons-one");$(".star-selector__buttons__button").attr('tabindex','1');$("#star").val("1");}
+if(num=="2"){$(".star-selector__buttons").attr("class","star-selector__buttons star-selector__buttons-two");$(".star-selector__buttons__button").attr('tabindex','2');$("#star").val("2");}
+if(num=="3"){$(".star-selector__buttons").attr("class","star-selector__buttons star-selector__buttons-three");$(".star-selector__buttons__button").attr('tabindex','3');$("#star").val("3");}
+if(num=="4"){$(".star-selector__buttons").attr("class","star-selector__buttons star-selector__buttons-four");$(".star-selector__buttons__button").attr('tabindex','4');$("#star").val("4");}
+if(num=="5"){$(".star-selector__buttons").attr("class","star-selector__buttons star-selector__buttons-five");$(".star-selector__buttons__button").attr('tabindex','5');$("#star").val("5");}})
+$(".star-selector__buttons__button").hover(function(){const num=$(this).attr('data-stars');if(num=="1"){$(".star-selector__buttons").attr("class","star-selector__buttons star-selector__buttons-one");}
+if(num=="2"){$(".star-selector__buttons").attr("class","star-selector__buttons star-selector__buttons-two");}
+if(num=="3"){$(".star-selector__buttons").attr("class","star-selector__buttons star-selector__buttons-three");}
+if(num=="4"){$(".star-selector__buttons").attr("class","star-selector__buttons star-selector__buttons-four");}
+if(num=="5"){$(".star-selector__buttons").attr("class","star-selector__buttons star-selector__buttons-five");}},function(){const num=$(this).attr('tabindex');if(num=="0"){$(".star-selector__buttons").attr("class","star-selector__buttons star-selector__buttons-zero");}
+if(num=="1"){$(".star-selector__buttons").attr("class","star-selector__buttons star-selector__buttons-one");}
+if(num=="2"){$(".star-selector__buttons").attr("class","star-selector__buttons star-selector__buttons-two");}
+if(num=="3"){$(".star-selector__buttons").attr("class","star-selector__buttons star-selector__buttons-three");}
+if(num=="4"){$(".star-selector__buttons").attr("class","star-selector__buttons star-selector__buttons-four");}
+if(num=="5"){$(".star-selector__buttons").attr("class","star-selector__buttons star-selector__buttons-five");}});$(document).on("click",'.brand-find-useful__button',function(){let like=parseInt($(this).find(".brand-find-useful__count").attr('data-like'));let id=parseInt($(this).find(".brand-find-useful__count").attr('data-id'));if($(this).hasClass("brand-find-useful__button--current-consumer")){$(this).removeClass("brand-find-useful__button--current-consumer");like=like-1;}else{$(this).addClass("brand-find-useful__button--current-consumer");like=like+1;}
+$(this).find(".brand-find-useful__count").attr('data-like',like);if(like>0){$(this).find(".brand-find-useful__count").html(like);}else{$(this).find(".brand-find-useful__count").html('');}
+if(timeout){clearTimeout(timeout);}
+timeout=setTimeout(function(){$.ajax({url:'/service/like/comment/'+id,type:'post',dataType:'json',contentType:'application/json',success:function(data){if(data.status=="successful"){}},});},500);});$(document).on("click",".brand-share-button",function(){let id=parseInt($(this).attr('data-id'));let share=parseInt($(this).find(".brand-find-useful__count").attr('data-share'));let urlShare=$(this).attr('data-slug');window.open('https://www.facebook.com/sharer/sharer.php?u=https://www.ireviewsach.com/review-book/'+urlShare+'/'+id+'#review-'+id,'socialshare','width=550,height=450')
+if($(this).hasClass("brand-find-useful__button--current-consumer")){}else{$(this).addClass("brand-find-useful__button--current-consumer");share=share+1;$(this).find(".brand-find-useful__count").attr('data-share',share);$(this).find(".brand-find-useful__count").html(share);if(timeoutShare){clearTimeout(timeoutShare);}
+timeoutShare=setTimeout(function(){$.ajax({url:'/service/share/comment/'+id,type:'post',dataType:'json',contentType:'application/json',success:function(data){if(data.status=="successful"){}},});},500);}});$(".header__menu").click(function(){if($(".header__container").hasClass("header__container--nav-on")){$(".header__container").removeClass("header__container--nav-on");$(".header__menu").removeClass("header__menu--open");}else{$(".header__container").addClass("header__container--nav-on");$(".header__menu").addClass("header__menu--open");}});$(".btn-reply-review").click(function(){$("#parent_id").val($(this).attr("data-comment-id"));});$(".btn-edit-review").click(function(){$("#id").val($(this).attr("data-comment-id"));$("#parent_id").val($(this).attr("data-comment-parent_id"));var contentComment=$("#comment-id-"+$(this).attr("data-comment-id")).html();$('#comment').trumbowyg('html',contentComment);$("#postion").val($(this).attr("data-comment-postion"));$("#fullname").val($(this).attr("data-comment-fullname"));if($(this).attr("data-comment-avatar")){$("#img-avatar-comment").attr('src',$(this).attr("data-comment-avatar"));}else{$("#img-avatar-comment").attr("src",'');$(".img-form-comment").hide();}
+if($(this).attr("data-comment-parent_id")==0){$("#star").val($(this).attr("data-comment-star"));}});$(".btn-edit-review").click(function(){$("#id").val($(this).attr("data-comment-id"));$("#parent_id").val($(this).attr("data-comment-parent_id"));var contentComment=$("#comment-id-"+$(this).attr("data-comment-id")).html();$('#comment').trumbowyg('html',contentComment);$("#postion").val($(this).attr("data-comment-postion"));$("#fullname").val($(this).attr("data-comment-fullname"));if($(this).attr("data-comment-avatar")){$("#img-avatar-comment").attr('src',$(this).attr("data-comment-avatar"));}else{$("#img-avatar-comment").attr("src",'');$(".img-form-comment").hide();}
+if($(this).attr("data-comment-parent_id")==0){$("#star").val($(this).attr("data-comment-star"));}});
