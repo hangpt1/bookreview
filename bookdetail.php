@@ -18,7 +18,6 @@
             </div>
             <div class="info-container">
                 <h2 id="review-title">Tiêu đề: <span>Bí quyết thành công và may mắn của Max</span></h2>
-                <p class="reviewer">Người Review: <span id="reviewer-name">Phạm Ngọc Ánh</span></p>
                 <p class="book-title">Tên Cuốn Sách: <span id="book-title">Bí mật của may mắn</span></p>
                 <p class="author">Tác Giả: <span id="author-name">Alex Rovira</span></p>
                 <p class="genre">Thể Loại: <span id="genre">Sách tự lực</span></p>
