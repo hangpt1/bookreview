@@ -24,6 +24,13 @@
         </div>
     </div>
     <div class="review-detail-container">
+        <div class="user-info">
+            <img src="https://shophoavungtau.com/wp-content/uploads/2023/07/y-nghia-hoa-tulip.jpg" alt="Avatar của Phạm Ngọc Ánh">
+            <div class="user-details">
+              <span class="user-name">Phạm Ngọc Ánh</span>
+              <span class="user-info-detail">Đăng ngày 24 thg 06, 2024</span>
+            </div>
+        </div>
 
         <div class="review-header">
             <div class="image-container">
