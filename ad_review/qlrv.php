@@ -44,7 +44,7 @@
         <tr>
             <th class="product-prop product-name">ID Review</th>
             <th class="product-prop product-name">ID Người dùng</th>
-            <th class="product-prop product-img">ID Sách</th>
+            <th class="product-prop product-img">Tên sách</th>
             <th class="product-prop product-time">Nội dung</th>
             <th class="product-prop product-time">Số sao </th>
             <th class="product-prop product-time">Ngày tạo</th>
@@ -59,7 +59,7 @@
         <tr>
             <td>1</td>
             <td>1</td>
-            <td>1</td>
+            <td>Tên sách</td>
             <td>nội dung sách</td>
             <td>5</td>
             <td>05/01/2024</td>

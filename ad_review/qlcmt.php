@@ -43,7 +43,7 @@
     <thead>
         <tr>
             <th class="product-prop product-img">ID bình luận</th>
-            <th class="product-prop product-name">ID Đánh giá</th>
+            <th class="product-prop product-name">ID Review</th>
             <th class="product-prop product-name">ID Người dùng</th>
             <th class="product-prop product-time">Nội dung</th>
             <th class="product-prop product-time">Ngày tạo </th>
