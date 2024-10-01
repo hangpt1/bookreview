@@ -31,10 +31,6 @@
             </div>
 
             <form action="#" method="POST" enctype="multipart/form-data">
-                <div class="input-field">
-                    <label for="name">Tên của bạn:</label>
-                    <input type="text" id="name" class="input" placeholder="Nhập tên của bạn" required onfocus="addFocusEffect(this)" onblur="removeFocusEffect(this)">
-                </div>
 
                 <div class="input-field">
                     <label for="book-title">Tên cuốn sách:</label>
