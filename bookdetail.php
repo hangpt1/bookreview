@@ -7,8 +7,21 @@
     <title>Chi Tiết Bài Review Sách</title>
 </head>
 <body>
-    <div class="detail-header">
-        <h1>Chi tiết bài review</h1>
+    <div class="page-banner-section section bg-gray" bis_skin_checked="1">
+        <div class="container" bis_skin_checked="1">
+            <div class="row" bis_skin_checked="1">
+                <div class="col" bis_skin_checked="1">
+
+                    <div class="page-banner text-center" bis_skin_checked="1">
+                        <h1>CHI TIẾT BÀI REVIEW</h1>
+                        <ul class="page-breadcrumb">
+                            <li><a href="./">Trang chủ</a></li>
+                            <li>Chi tiết review</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="review-detail-container">
 
@@ -19,8 +32,8 @@
             <div class="info-container">
                 <h2 id="review-title">Tiêu đề: <span>Bí quyết thành công và may mắn của Max</span></h2>
                 <p class="book-title">Tên Cuốn Sách: <span id="book-title">Bí mật của may mắn</span></p>
-                <p class="author">Tác Giả: <span id="author-name">Alex Rovira</span></p>
-                <p class="genre">Thể Loại: <span id="genre">Sách tự lực</span></p>
+                <p class="author">Tác giả: <span id="author-name">Alex Rovira</span></p>
+                <p class="genre">Thể loại: <span id="genre">Sách tự lực</span></p>
             </div>
         </div>
 
@@ -33,7 +46,7 @@
                 Dưới ngòi bút của Alex Rovira và Fernando Trías de Bes - hai nhà tư vấn tâm lý và tiếp thị hàng đầu thế giới đã có công trình nghiên cứu về thái độ, hành vi con người cũng như ước mong, niềm tin của họ đối với sự may mắn, dẫn đến thành công trong cuộc sống, xoay quanh 12 bí mật nhỏ, vừa kể chuyện, vừa trích dẫn châm ngôn triết lí những câu chuyện giản dị này có thể được áp dụng rất rộng rãi cho tất cả mọi người và có khả năng khích lệ tinh thần, thái độ sống một cách độc đáo.  </p>
             
             <div class="video-container">
-                <h3>Video Review (nếu có)</h3>
+                <h3>Video review (Nếu có)</h3>
                 <video id="review-video" controls>
                     <source src="path/to/video.mp4" type="video/mp4">
                     Trình duyệt của bạn không hỗ trợ video.
@@ -42,7 +55,8 @@
         </div>
 
         <div class="comments-section">
-            <h2>Bình Luận</h2>
+            <h2>Bình luận</h2>
+            <p>Vui lòng bình luận văn minh*</p>
             <form action="#" method="POST" id="comment-form">
                 <textarea id="comment" class="input" placeholder="Thêm bình luận của bạn" rows="3" required></textarea>
                 <input type="submit" value="Đăng Bình Luận" class="submit">
@@ -70,7 +84,6 @@
 
         // Xóa nội dung trong ô nhập sau khi gửi bình luận
         commentInput.value = "";
-    });
+        });
 </script>
-
 </html>
