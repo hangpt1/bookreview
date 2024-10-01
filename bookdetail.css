@@ -1,3 +1,4 @@
+/* Existing CSS */
 * {
     box-sizing: border-box;
 }
@@ -23,6 +24,60 @@ body {
     padding: 20px;
 }
 
+/* Page Banner Section - Full Width */
+.page-banner-section {
+    background-color: var(--main_title_color);
+    padding: 60px 0;
+    text-align: center;
+    width: 100vw; 
+    margin: 0; 
+    position: relative;
+    left: 50%; 
+    transform: translateX(-50%); 
+}
+
+.page-banner-section h1 {
+    font-size: 36px;
+    color: var(--white_color); 
+    margin-bottom: 10px;
+}
+
+.page-breadcrumb {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+
+.page-breadcrumb li {
+    color: var(--white_color);
+    font-size: 16px;
+    margin: 0 6px;
+    position: relative;
+}
+
+.page-breadcrumb li a {
+    color: var(--white_color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.page-breadcrumb li a:hover {
+    color: var(--sub_title_color);
+}
+
+.page-breadcrumb li::after {
+    content: '/';
+    color: var(--white_color);
+    margin-left: 10px;
+}
+
+.page-breadcrumb li:last-child::after {
+    content: '';
+    margin-left: 0;
+}
+
+/* Review Detail Container */
 .review-detail-container {
     background: rgba(255, 255, 255, 0.9); 
     border-radius: 8px; 
@@ -47,11 +102,19 @@ body {
     margin-bottom: 15px; 
 }
 
-.video-review h3{
-    margin-top: 20px; 
-    text-align: left; 
-    font-style: #5D853E; 
+.video-review h3 {
+    margin-top: 20px;
+    color: var(--main_title_color); 
+    font-size: 20px; 
 }
+
+.video-container h3 {
+    margin-top: 20px;
+    color: var(--main_title_color);
+    font-size: 20px;
+    font-weight: bold;
+}
+
 
 .review-detail-container video {
     width: 100%; 
@@ -104,12 +167,13 @@ body {
 }
 
 .info-container h2 {
-    font-size: 24px;
+    font-size: 20px;
     margin: 0;
 }
 
 .info-container p {
-    margin: 5px 0;
+    margin-right: auto;
+    padding: 2px;
 }
 
 .review-content {
@@ -129,7 +193,14 @@ body {
 }
 
 .comments-section h2 {
-    font-size: 20px;
+    text-align: left; 
+    font-size: 20px;  
+    color: var(--main_title_color); 
+}
+
+.comments-section p {
+    font-size: 15px;  
+    color: var(--black_color); 
 }
 
 .comments-list {
@@ -150,7 +221,6 @@ body {
     resize: none;
     min-height: 100px; 
 }
-
 
 .submit {
     background-color: #6F9E4D; 
