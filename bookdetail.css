@@ -200,7 +200,7 @@ body {
 
 .comments-section p {
     font-size: 15px;  
-    color: var(--black_color); 
+    color:  #999797; 
 }
 
 .comments-list {
