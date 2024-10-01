@@ -82,7 +82,7 @@ header {
 
 textarea.input {
     height: auto; 
-    min-height: 300px; 
+    min-height: 200px; 
     padding: 10px; 
     overflow: auto; 
     resize: none; 
